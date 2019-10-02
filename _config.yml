@@ -22,7 +22,7 @@ title: CYAN4S blog
 email: sih5214p@naver.com
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to CYAN4S's official blog.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: cyan4s
 github_username:  CYAN4S
