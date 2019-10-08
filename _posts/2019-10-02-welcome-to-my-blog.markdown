@@ -2,7 +2,8 @@
 layout: post
 title:  "Welcome to CYAN4S's blog!"
 date:   2019-10-02 21:50:00 +0900
-categories: dev story
+categories: story
+tags: story
 ---
 CYAN4S의 블로그에 오신 것을 환영합니다. 
 
