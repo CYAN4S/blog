@@ -55,8 +55,8 @@
     position: absolute;
     top: 9px;
     right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
+    // background-color: $background-color;
+    // border: 1px solid $grey-color-light;
     border-radius: 5px;
     text-align: right;
 
@@ -79,7 +79,7 @@
       text-align: center;
 
       > svg {
-        fill: $grey-color-dark;
+        fill: white;
       }
     }
 
@@ -91,11 +91,14 @@
     input:checked ~ .trigger {
       display: block;
       padding-bottom: 5px;
+      background-color: $background-color;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     }
 
     .page-link {
       display: block;
-      padding: 5px 10px;
+      padding: 8px 16px;
+      color: $text-color;
 
       &:not(:last-child) {
         margin-right: 0;
