@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: "Noto Sans KR";
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: "Roboto Mono";
+}
+
+body > * {
+  padding: 0 10% 0 10%;
+}
+
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #26bfb3;
+  color: white;
+}
+
+main {
+  flex: 1;
+  display: flex;
+}
+
+main #posts {
+  flex: 1;
+  padding-right: 40px;
+}
+
+main #sidebar {
+  width: 280px;
+}
+
+main a {
+  color: #26bfb3;
+}
+
+.posts li {
+  min-height: 120px;
+}
+
+article {
+  padding-bottom: 60px;
+}
+
+footer {
+  display: flex;
+  background-color: gray;
+  color: white;
+  font-family: "Roboto Mono";
+}
+
+footer > div {
+  margin: 20px 0 20px 0;
+  flex: 1;
+}
+
+footer li {
+  color: lightgray;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.nodec-a {
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+  align-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.mont {
+  font-family: Montserrat;
+}
+
+.white {
+  color: white;
+}
+
+.pr-40 {
+  padding-right: 40px;
+}
+
+@media screen and (max-width: 800px) {
+  footer {
+    flex-direction: column;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  main #posts {
+    padding-right: 0;
+  }
+
+  main #sidebar {
+    width: auto;
+  }
+}

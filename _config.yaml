@@ -1,0 +1,13 @@
+title: CYAN4S tech blog
+email: sih5214p@gmail.com
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
