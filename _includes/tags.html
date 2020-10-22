@@ -1,0 +1,5 @@
+<div class="ct-container">
+  {% for tag in site.tags %}
+  <a href="{{ 'tags' | relative_url }}#tag-{{ tag[0] }}">#{{ tag[0] }}</a>
+  {% endfor %}
+</div>

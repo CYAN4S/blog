@@ -1,0 +1,5 @@
+<div class="ct-container">
+  {% for category in site.categories %}
+  <a href="{{ 'categories' | relative_url }}#category-{{ category[0] }}">{{ category[0] }}</a>
+  {% endfor %}
+</div>

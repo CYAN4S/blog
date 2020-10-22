@@ -28,25 +28,37 @@ main {
   display: flex;
 }
 
-main #posts {
-  flex: 1;
-  padding-right: 40px;
-}
-
 main #sidebar {
   width: 280px;
+  padding-bottom: 20px;
 }
 
 main a {
   color: #26bfb3;
 }
 
-.posts li {
+main #content {
+  flex: 1;
+  padding: 0 40px 60px 0;
+}
+
+main #content ul.posts li {
   min-height: 120px;
 }
 
-article {
-  padding-bottom: 60px;
+.ct-container {
+  padding: 16px;
+  border-radius: 20px;
+  background-color: #E9F9F7;
+}
+
+.ct-container a {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 4px 12px 4px 12px;
+  border: 1px solid;
+  border-radius: 20px;
+  font-size: 16px;
 }
 
 footer {
@@ -66,6 +78,7 @@ footer li {
 }
 
 ul {
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -128,7 +141,7 @@ ul {
     flex-direction: column;
   }
 
-  main #posts {
+  main #content {
     padding-right: 0;
   }
 

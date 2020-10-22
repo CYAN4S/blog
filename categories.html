@@ -2,9 +2,7 @@
 ---
 
 <h2>전체 카테고리</h2>
-{% for category in site.categories %}
-<a href="#category-{{ category[0] }}">{{ category[0] }}</a>
-{% endfor %}
+{% include categories.html %}
 
 {% for category in site.categories %}
 <h2 id="category-{{ category[0] }}">{{ category[0] }}</h2>

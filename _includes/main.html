@@ -1,20 +1,16 @@
 <main>
-  <section id="posts">{{content}}</section>
+  <section id="content">{{content}}</section>
   <section id="sidebar">
     <h2>카테고리 <a href="{{ 'categories' | relative_url  }}">></a></h2>
-    {% for category in site.categories %}
-    <a href="{{ 'categories' | relative_url }}#category-{{ category[0] }}">{{ category[0] }}</a>
-    {% endfor %}
+    {% include categories.html %}
 
     <h2>태그 <a href="{{ 'tags' | relative_url }}">></a></h2>
-    {% for tag in site.tags %}
-    <a href="{{ 'tags' | relative_url }}#tag-{{ tag[0] }}">#{{ tag[0] }}</a>
-    {% endfor %}
+    {% include tags.html %}
 
     <h2>프로필</h2>
     <img src="{{ 'assets/img/profile.svg' | relative_url }}" alt="Profile image" width="100%" />
-    <h3>CYAN4S : 손인호</h3>
-    <p>안녕하세요!</p>
-    <p>sih5214p@gmail.com</p>
+    <h3>CYAN4S</h3>
+    <p>게임 & 웹 개발 / 그래픽 디자인 / 컴공과 학생(휴학 중) / 취미로 리듬게임 & 작곡 <a href="{{ 'about' | relative_url }}">더 알아보기</a></p>
+    <p>{{ site.email }}</p>
   </section>
 </main>
