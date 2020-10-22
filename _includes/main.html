@@ -3,16 +3,16 @@
   <section id="sidebar">
     <h2>카테고리 <a href="/categories">></a></h2>
     {% for category in site.categories %}
-    <a href="/categories#category-{{ category[0] }}">{{ category[0] }}</a>
+    <a href="{{ 'categories' | relative_url  }}#category-{{ category[0] }}">{{ category[0] }}</a>
     {% endfor %}
 
     <h2>태그 <a href="/tags">></a></h2>
     {% for tag in site.tags %}
-    <a href="/tags#tag-{{ tag[0] }}">#{{ tag[0] }}</a>
+    <a href="{{ 'tags' | relative_url  }}#tag-{{ tag[0] }}">#{{ tag[0] }}</a>
     {% endfor %}
 
     <h2>프로필</h2>
-    <img src="/assets/img/profile.svg" alt="Profile image" width="100%" />
+    <img src="{{ 'assets/img/profile.svg' | relative_url }}" alt="Profile image" width="100%" />
     <h3>CYAN4S : 손인호</h3>
     <p>안녕하세요!</p>
     <p>sih5214p@gmail.com</p>
