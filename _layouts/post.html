@@ -1,9 +1,15 @@
 ---
-layout: default
+layout: col-2
 ---
 
 <article>
-  <h2>{{ page.title }}</h2>
-  <div>{{ page.date | date_to_string }}</div>
+  <h1>{{ page.title }}</h1>
+  <div class="date">
+    {{ page.date | date: "%Y.%m.%d" }} /
+    <a href="{{ 'categories' | relative_url }}#category-{{ page.categories[0] }}">{{ page.categories[0] }}</a> / 
+    {% for tag in page.tags %}
+    <a href="{{ 'tags' | relative_url }}#tag-{{ tag }}">#{{ tag }}</a>
+    {% endfor %}
+  </div>
   {{ content }}
 </article>

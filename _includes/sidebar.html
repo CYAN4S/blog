@@ -1,0 +1,19 @@
+<section id="sidebar">
+  <h2>카테고리 <a href="{{ 'categories' | relative_url  }}">></a></h2>
+  {% include categories.html %}
+
+  <h2>태그 <a href="{{ 'tags' | relative_url }}">></a></h2>
+  {% include tags.html %}
+
+  <h2>프로필</h2>
+  <img
+    src="{{ 'assets/img/profile.svg' | relative_url }}"
+    alt="Profile image"
+  />
+  <h3>CYAN4S</h3>
+  <p>
+    게임 & 웹 개발 / 그래픽 디자인 / 컴공과 학생(휴학 중) / 취미로 리듬게임 &
+    작곡 <a href="{{ 'about' | relative_url }}">더 알아보기</a>
+  </p>
+  <p>{{ site.email }}</p>
+</section>

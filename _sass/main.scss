@@ -1,0 +1,140 @@
+$cyan: #26bfb3;
+$breakpoint: 1200px;
+$side-width: 280px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+code {
+  font-family: "Roboto Mono", monospace;
+}
+
+a {
+  color: $cyan;
+}
+
+body > * {
+  padding: 0 10% 0 10%;
+}
+
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: $cyan;
+
+  a {
+    color: white;
+    font: 700 24px Montserrat;
+    text-decoration: none;
+  }
+}
+
+main.col-2 {
+  display: flex;
+
+  #content {
+    flex: 1;
+    padding: 0 40px 60px 0;
+  }
+
+  #sidebar {
+    width: $side-width;
+    padding-bottom: 20px;
+
+    img {
+      width: $side-width;
+    }
+  }
+
+  @media (max-width: $breakpoint) {
+    flex-direction: column;
+
+    #content {
+      padding-right: 0;
+    }
+
+    #sidebar {
+      width: auto;
+    }
+  }
+}
+
+.ct-container {
+  padding: 16px;
+  border-radius: 20px;
+  background-color: #e9f9f7;
+
+  a {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 4px 12px 4px 12px;
+    border: 1px solid;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+}
+
+.post-ul {
+  li {
+    min-height: 120px;
+    padding-bottom: 32px;
+
+    a {
+      font-weight: 700;
+      font-size: 20px;
+    }
+    span {
+      padding-left: 4px;
+      font-size: 14px;
+      color: gray;
+    }
+  }
+}
+
+article {
+  h1 {
+    font-weight: 700;
+    font-size: 28px;
+  }
+
+  .date {
+    color: gray;
+  }
+}
+
+footer {
+  display: flex;
+  background-color: gray;
+  color: white;
+  font-family: "Roboto Mono";
+
+  > div {
+    margin: 20px 0 20px 0;
+    flex: 1;
+  }
+
+  li {
+    color: lightgray;
+
+    a {
+      color: white;
+    }
+  }
+
+  @media (max-width: $breakpoint) {
+    flex-direction: column;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

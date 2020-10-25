@@ -6,12 +6,9 @@
 
 {% for tag in site.tags %}
 <h2 id="tag-{{ tag[0] }}">{{ tag[0] }}</h2>
-<ul class="posts">
+<ul class="post-ul">
   {% for post in tag[1] %}
-  <li>
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-    <p>{{ post.excerpt }}</p>
-  </li>
+  {% include post-li.html %}
   {% endfor %}
 </ul>
 {% endfor %}

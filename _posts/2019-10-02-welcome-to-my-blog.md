@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Welcome to CYAN4S's blog!"
 categories: [story]
 tags: [story]

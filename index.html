@@ -1,12 +1,19 @@
 ---
+layout: default
 ---
 
-<h2>최근 포스트</h2>
-<ul class="posts">
-  {% for post in site.posts %}
-  <li>
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-    <p>{{ post.excerpt }}</p>
-  </li>
-  {% endfor %}
-</ul>
+<section id="index">
+
+</section>
+
+<main class="col-2">
+  <section id="content">
+    <h2>최근 포스트</h2>
+    <ul class="post-ul">
+      {% for post in site.posts %}
+      {% include post-li.html %}
+      {% endfor %}
+    </ul>
+  </section>
+  {% include sidebar.html %}
+</main>

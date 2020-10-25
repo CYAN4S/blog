@@ -1,11 +1,11 @@
 <footer>
   <div>
     <img src="{{ 'assets/img/logo-white.svg' | relative_url }}" alt="Logo at footer" width="28px">
-    <div class="font-24 bold mont" style="margin-top: 12px;">CYAN4S</div>
-    <div id="footer-copy">Copyright {{site.time | date: "%Y"}}.<br>CYAN4S All Rights Reserved.</div>
+    <div style="margin-top: 12px; font: 700 24px Montserrat;">CYAN4S</div>
+    <div>Copyright {{ site.time | date: "%Y" }}.<br>CYAN4S All Rights Reserved.</div>
   </div>
   <div>
-    <div class="font-24">Links</div>
+    <div style="font-size: 24px;">Links</div>
     <ul>
       {% for page in site.data.social %}
       <li>{{ page.name }} <a href="{{ page.link }}" class="white">{{page.id}}</a></li>

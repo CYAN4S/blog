@@ -6,12 +6,9 @@
 
 {% for category in site.categories %}
 <h2 id="category-{{ category[0] }}">{{ category[0] }}</h2>
-<ul class="posts">
+<ul class="post-ul">
   {% for post in category[1] %}
-  <li>
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-    <p>{{ post.excerpt }}</p>
-  </li>
+  {% include post-li.html %}
   {% endfor %}
 </ul>
 {% endfor %}
