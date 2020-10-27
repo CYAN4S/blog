@@ -1,0 +1,14 @@
+---
+---
+
+<h2>모든 포트폴리오</h2>
+
+<ul class="portfolio-ul">
+  {% for portfolio in site.portfolios %}
+  <li onclick="window.location.href = `{{ portfolio.url | relative_url }}`">
+    <img src="{{ portfolio.thumbnail | relative_url }}" alt="{{ portfolio.title }}" />
+    <div class="title">{{ portfolio.title }}</div>
+    <p>{{ portfolio.excerpt }}</p>
+  </li>
+  {% endfor %}
+</ul>

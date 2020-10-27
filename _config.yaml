@@ -1,8 +1,12 @@
 title: CYAN4S TECH BLOG
 email: sih5214p@gmail.com
 
-url: https://cyan4s.studio/blog
+url: https://cyan4s.github.io/blog
 baseurl: /blog
+
+collections:
+  portfolios:
+    output: true
 
 defaults:
   - scope:
@@ -12,5 +16,13 @@ defaults:
       layout: "post"
   - scope:
       path: ""
+      type: "portfolios"
+    values:
+      layout: "portfolio"
+  - scope:
+      path: ""
     values:
       layout: "col-2"
+
+plugins:
+  - jekyll-sitemap

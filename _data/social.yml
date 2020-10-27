@@ -1,6 +1,6 @@
 - name: CYAN4S Homepage
   id: Link
-  link: https://cyan4s.studio
+  link: https://cyan4s.github.io
 
 - name: GitHub
   id: CYAN4S
@@ -9,3 +9,7 @@
 - name: Twitter
   id: cyan4s
   link: https://twitter.com/cyan4s
+
+- name: Blog Source Code
+  id: Browse
+  link: https://github.com/CYAN4S/blog

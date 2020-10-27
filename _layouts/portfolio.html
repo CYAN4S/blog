@@ -1,0 +1,21 @@
+---
+layout: col-2
+---
+
+<article>
+  <h1>{{ page.title }}</h1>
+  <img
+    src="{{ page.thumbnail | relative_url }}"
+    alt="{{ page.title }}"
+    class="portfolio"
+  />
+  <div class="links">
+    {% if page.link %}
+    Play at <a href="{{ page.link }}">GitHub</a><br>
+    {% endif %}
+    {% if page.github %} 
+    Browse Code at <a href="{{ page.github }}">GitHub</a> 
+    {% endif %} 
+  </div>
+  {{content}}
+</article>
