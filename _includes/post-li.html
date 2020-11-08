@@ -1,7 +1,7 @@
 <li>
   <div>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <span>{{ post.date | date: "%Y.%m.%d" }}</span>
+    <a href="{{ post.url | relative_url }}"><h6>{{ post.title }}<h6></a>
+    <span class="caption">{{ post.date | date: "%Y.%m.%d" }}</span>
   </div>
   <p>{{ post.excerpt }}</p>
 </li>
