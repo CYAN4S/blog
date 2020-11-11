@@ -2,17 +2,13 @@
 layout: default
 ---
 
-<section id="index">
-
-</section>
+<section id="index"></section>
 
 <main class="col-2">
   <section id="content">
     <h2>최근 포스트</h2>
     <ul class="post-ul">
-      {% for post in site.posts %}
-      {% include post-li.html %}
-      {% endfor %}
+      {% for post in site.posts %} {% include post-li.html %} {% endfor %}
     </ul>
   </section>
   {% include sidebar.html %}

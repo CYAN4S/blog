@@ -1,27 +1,42 @@
 ---
 layout: about
-date: 2020-10-30
+date: 2020-11-11
 ---
 
-## 이름
-
-손인호
-
-## 생년월일
-
-1999년 1월 24일
-
-## 상황
-
-현재: 금오공과대학교 컴퓨터공학과 휴학 중
-2020.09: 대한민국 육군 상근예비역 병장 소집해제
-2019.01: 대한민국 육군 입영
-2017.03: 금오공과대학교 컴퓨터공학과 입학
-이전: 속초고등학교 졸업
-
-## 커리어
-
-딱히 없음.
+<div
+  class="card"
+  onclick="window.location.href = `{{'about' | relative_url }}`"
+  id="aboutcard"
+>
+  <img
+    src="{{ 'assets/img/profile.svg' | relative_url }}"
+    alt="Profile image"
+    class="media"
+  />
+  <div class="content">
+    <h6>CYAN4S</h6>
+    <div>
+      <div class="overline">KOR NAME</div>
+      <p>손인호</p>
+    </div>
+    <div>
+      <div class="overline">ENG NAME</div>
+      <p>Inho Son</p>
+    </div>
+    <div>
+      <div class="overline">BIRTHDAY</div>
+      <p>1999.01.24</p>
+    </div>
+    <div>
+      <div class="overline">MAIN LANG</div>
+      <p>C#, JS</p>
+    </div>
+    <div class="full-col">
+      <div class="overline">MAJOR</div>
+      <p>Computer Engineering & Science</p>
+    </div>
+  </div>
+</div>
 
 ## 설명
 
@@ -45,3 +60,14 @@ date: 2020-10-30
 
 대학에서 C와 Java를 배웠지만 잘 사용하지는 않습니다. Flutter/Dart, React, Kotlin은 아직 깊게 공부하고 있지는 않습니다.
 
+## 상황
+
+현재: 금오공과대학교 컴퓨터공학과 휴학 중
+
+2020.09: 대한민국 육군 상근예비역 병장 소집해제
+
+2019.01: 대한민국 육군 입영
+
+2017.03: 금오공과대학교 컴퓨터공학과 입학
+
+이전: 속초고등학교 졸업

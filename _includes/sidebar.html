@@ -1,4 +1,7 @@
 <section id="sidebar">
+  <h6>저에 대해 <a href="{{ 'about' | relative_url }}">></a></h6>
+  <hr>
+
   <h6>포트폴리오 <a href="{{ 'portfolios' | relative_url  }}">></a></h6>
   <hr>
 
@@ -8,20 +11,4 @@
 
   <h6>태그 <a href="{{ 'tags' | relative_url }}">></a></h6>
   {% include tags.html %}
-  <hr>
-
-  <h6>프로필</h6>
-  <div class="card" onclick="window.location.href = `{{ 'about' | relative_url }}`">
-    <img
-      src="{{ 'assets/img/profile.svg' | relative_url }}"
-      alt="Profile image"
-    />
-    <div class="content">
-      <h6>CYAN4S</h6>
-      <p>
-        게임 & 웹 개발 / 그래픽 디자인 / 컴공과 학생(휴학 중) / 취미로 리듬게임 &
-        작곡 
-      </p>
-    </div>
-  </div>
 </section>

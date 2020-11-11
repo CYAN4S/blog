@@ -1,8 +1,8 @@
 $cyan: #26bfb3;
-$breakpoint: 900px;
-$breakpoint0: 720px;
+$breakpoint0: 960px;
+$breakpoint1: 720px;
+$breakpoint2: 600px;
 $side-width: 240px;
-$max-width: 1200px;
 
 * {
   box-sizing: border-box;
@@ -22,12 +22,20 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 main,
 header .inside,
 footer .inside {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
+
+  @media (max-width: $breakpoint2) {
+    padding: 0 20px;
+  }
 }
 
 header {
@@ -44,13 +52,14 @@ header {
     color: white;
     font: 700 24px Montserrat;
     text-decoration: none;
+    letter-spacing: 1px;
   }
 }
 
 footer {
   background-color: gray;
   color: white;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Fira Code", monospace;
 
   > div.inside {
     display: flex;
@@ -58,7 +67,7 @@ footer {
       margin: 20px 0;
       flex: 1;
     }
-    @media (max-width: $breakpoint0) {
+    @media (max-width: $breakpoint1) {
       flex-direction: column;
     }
   }
@@ -75,22 +84,17 @@ main.col-2 {
   display: flex;
   padding-top: 40px;
   padding-bottom: 40px;
+  gap: 40px;
 
   #content {
     flex: 1;
-    padding-right: 40px;
   }
 
   #sidebar {
     width: $side-width;
-
-    img {
-      width: $side-width;
-      border-radius: 20px;
-    }
   }
 
-  @media (max-width: $breakpoint) {
+  @media (max-width: $breakpoint0) {
     flex-direction: column;
 
     #content {
@@ -134,14 +138,8 @@ main.col-2 {
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 
-  @media (max-width: $breakpoint0) {
+  @media (max-width: $breakpoint1) {
     grid-template-columns: 1fr;
-  }
-}
-
-article {
-  img.portfolio {
-    width: 100%;
   }
 }
 
@@ -154,12 +152,10 @@ ul {
 hr {
   background-color: rgba(0, 0, 0, 0.5);
   height: 1px;
-  margin: 20px 0 40px 0;
+  margin: 20px 0;
   border: 0;
 }
 
-h1,
-h2,
 h3,
 h4,
 h5,
@@ -173,21 +169,23 @@ h1 {
   font-size: 60px;
   font-weight: 300;
   letter-spacing: -1.5px;
+  margin: 0 0 32px;
 }
 
 h2 {
-  font-size: 48px;
+  font-size: 44px;
   font-weight: 300;
   letter-spacing: -0.5px;
+  margin: 0 0 20px;
 }
 
 h3 {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 400;
 }
 
 h4 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 400;
   letter-spacing: 0.25px;
 }
@@ -215,7 +213,7 @@ p {
   font-weight: 600;
   letter-spacing: 1.5px;
   color: gray;
-  margin: 12px 0;
+  margin: 4px 0;
 }
 
 .caption {
@@ -226,15 +224,18 @@ p {
 }
 
 .subtitle {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.15px;
 }
 
 .card {
-  background-color: rgb(250, 250, 250);
+  box-shadow: 0 2px 8px -4px;
   border-radius: 20px;
   cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
 
   .content {
     padding: 20px;
@@ -243,5 +244,39 @@ p {
   .media {
     width: 100%;
     border-radius: 20px;
+  }
+}
+
+.card.hor {
+  flex-direction: row;
+}
+
+#aboutcard {
+  flex-direction: row;
+  margin-bottom: 24px;
+
+  .media {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 300px;
+
+    h6, .full-col {
+      grid-column: 1 / 3;
+    }
+  }
+
+  @media (max-width: 680px) {
+    flex-direction: column;
+
+    .media {
+      max-width: 100%;
+      max-height:  100%;
+    }
   }
 }
