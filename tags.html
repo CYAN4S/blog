@@ -1,14 +1,15 @@
 ---
 ---
 
-<h1>전체 태그</h1>
-{% include tags.html %}
-
-{% for tag in site.tags %}
-<h2 id="tag-{{ tag[0] }}">#{{ tag[0] }}</h2>
-<ul class="post-ul">
-  {% for post in tag[1] %}
-  {% include post-li.html %}
+<main>
+  {% for tag in site.tags %}
+  <section>
+    <h2 id="tag-{{ tag[0] }}">#{{ tag[0] }}</h2>
+    <ul class="post-ul">
+      {% for post in tag[1] %} 
+      {% include post-li.html %} 
+      {% endfor %}
+    </ul>
+  </section>
   {% endfor %}
-</ul>
-{% endfor %}
+</main>

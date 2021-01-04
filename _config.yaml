@@ -4,10 +4,6 @@ email: sih5214p@gmail.com
 url: https://cyan4s.github.io/blog
 baseurl: /blog
 
-collections:
-  portfolios:
-    output: true
-
 defaults:
   - scope:
       path: ""
@@ -16,13 +12,8 @@ defaults:
       layout: "post"
   - scope:
       path: ""
-      type: "portfolios"
     values:
-      layout: "portfolio"
-  - scope:
-      path: ""
-    values:
-      layout: "col-2"
+      layout: "default"
 
 plugins:
   - jekyll-sitemap

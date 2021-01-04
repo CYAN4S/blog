@@ -2,14 +2,30 @@
 layout: default
 ---
 
-<section id="index"></section>
+<main class="index">
+  <!-- <section>
+    <div class="cyanli">MAIN POSTS</div>
+  </section> -->
 
-<main class="col-2">
-  <section id="content">
-    <h2>최근 포스트</h2>
+  <!-- <section>
+    <div class="cyanli">CATEGORIES</div>
+    <div class="index-categories">
+      {% for category in site.categories %}
+      <a href="{{ 'categories' | relative_url }}#category-{{ category[0] }}">
+        {{ category[0] | upcase }}
+      </a>
+      {% endfor %}
+    </div>
+
+    <a class="seeall" href="{{ 'categories' | relative_url }}"
+      >See all categories</a
+    >
+  </section> -->
+
+  <section>
+    <div class="cyanli">RECENT POSTS</div>
     <ul class="post-ul">
       {% for post in site.posts %} {% include post-li.html %} {% endfor %}
     </ul>
   </section>
-  {% include sidebar.html %}
 </main>
