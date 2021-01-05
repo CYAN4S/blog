@@ -3,15 +3,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ 'assets/css/styles.css' | relative_url }}" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ 'favicon.ico' | relative_url }}" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="{{ 'assets/css/styles.css' | relative_url }}"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ 'favicon.ico' | relative_url }}"
+      type="image/x-icon"
+    />
   </head>
   <body>
-    {% include header.html %}
-    {{ content }}
-    {% include footer.html %}
-    {% include topbutton.html %}
+    {% include header.html %} {{ content }} {% include footer.html %} {% include
+    topbutton.html %}
   </body>
+  <script src="{{ 'assets/js/default.js' | relative_url }}"></script>
 </html>
