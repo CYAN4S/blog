@@ -2,11 +2,10 @@
 layout: default
 ---
 
-{% capture img %}url({{page.image | relative_url}}){% endcapture %} {% capture
-svg %}url({{page.imagesvg | relative_url}}){% endcapture %} {% if page.imagesvg
-%} {% assign image = svg %} {% elsif page.image %} {% assign image = img %} {%
-else %} {% assign image = 'linear-gradient(0.25turn, #1AC676, #26BFB3,
-#46ABDB);' %} {% endif %}
+{% capture img %}url({{page.image | relative_url}}){% endcapture %}
+{% if page.image %} {% assign image = img %} 
+{% else %} {% assign image = 'linear-gradient(0.25turn, #1AC676, #26BFB3, #46ABDB);' %} 
+{% endif %}
 
 <main class="post">
   <div class="post-header" style="background-image: {{image}};">
