@@ -194,16 +194,19 @@ article {
   li {
     list-style-type: disc;
   }
+
+  img {
+    max-width: 100%;
+  }
 }
 
 .neighbor {
   max-width: $breakpoint1;
   margin: 0 auto;
-  padding: 20px $gap 80px;
+  padding: 20px $gap;
 
   > div {
     display: flex;
-    gap: 40px;
   }
 }
 

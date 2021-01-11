@@ -33,7 +33,7 @@ else %} {% assign image = 'linear-gradient(0.25turn, #1AC676, #26BFB3,
 
   <div class="neighbor">
     <div>
-      <p style="font-weight: 700">이전 글</p>
+      <p style="font-weight: 700; margin-right: 20px;">이전 글</p>
       {% if page.previous %}
       <p>
         <a href="{{ page.previous.url | relative_url }}">
@@ -45,7 +45,7 @@ else %} {% assign image = 'linear-gradient(0.25turn, #1AC676, #26BFB3,
       {% endif %}
     </div>
     <div>
-      <p style="font-weight: 700">다음 글</p>
+      <p style="font-weight: 700; margin-right: 20px;">다음 글</p>
       {% if page.next %}
       <p>
         <a href="{{ page.next.url | relative_url }}">{{page.next.title}}</a>
@@ -55,4 +55,13 @@ else %} {% assign image = 'linear-gradient(0.25turn, #1AC676, #26BFB3,
       {% endif %}
     </div>
   </div>
+  <script
+    src="https://utteranc.es/client.js"
+    repo="CYAN4S/blog"
+    issue-term="pathname"
+    label="comment"
+    theme="github-light"
+    crossorigin="anonymous"
+    async
+  ></script>
 </main>
