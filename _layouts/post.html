@@ -2,8 +2,10 @@
 layout: default
 ---
 
+{% capture svg %}url({{page.svg | relative_url}}){% endcapture %}
 {% capture img %}url({{page.image | relative_url}}){% endcapture %}
-{% if page.image %} {% assign image = img %} 
+{% if page.svg %} {% assign image = svg %} 
+{% elsif page.image %} {% assign image = img %} 
 {% else %} {% assign image = 'linear-gradient(0.25turn, #1AC676, #26BFB3, #46ABDB);' %} 
 {% endif %}
 
@@ -11,7 +13,7 @@ layout: default
   <div class="post-header" style="background-image: {{image}};">
     <div class="flexauto"></div>
     <div class="inside">
-      <h6>{{ page.date | date: "%b %d, %Y" }}</h6>
+      <h6>{{ page.date | date: "%Y/%m/%d " }}</h6>
       <h1>{{ page.title }}</h1>
       <h6>
         <a
