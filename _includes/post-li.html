@@ -5,7 +5,7 @@
     <p>{{ post.excerpt }}</p>
 
     <h6>
-      {{ post.date | date: "%b %d, %Y" }}
+      {{ post.date | date: "%Y/%m/%d" }}
        · 
       <a href="{{ 'categories' | relative_url }}#category-{{ page.categories[0]  }}" style="font-weight: bold;">{{ post.categories[0] | upcase }}</a>
        · 
