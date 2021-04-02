@@ -1,8 +1,7 @@
 title: CYAN4S BLOG
-email: sih5214p@gmail.com
+email: me@cyan4s.com
 
-url: https://cyan4s.github.io
-baseurl: /blog
+url: https://blog.cyan4s.com
 
 author:
   twitter: cyan4s
@@ -18,11 +17,11 @@ lang: ko_KR
 social:
   name: Inho Son
   links:
-    - https://cyan4s.github.io/
+    - https://www.cyan4s.com
     - https://github.com/CYAN4S
     - https://twitter.com/cyan4s
     - https://www.behance.net/CYAN4S
-    - https://cyan4s.github.io/blog/
+    - https://blog.cyan4s.com
 
 defaults:
   - scope:
