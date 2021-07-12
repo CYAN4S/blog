@@ -1,4 +1,5 @@
 $cyan: #26bfb3;
+$keycyan: #009286;
 $keyblack: #0d0d0d;
 $softblack: #333333;
 
@@ -15,10 +16,15 @@ $sanserif: "Inter", "Noto Sans KR", sans-serif;
 $serif: "Noto Serif KR", serif;
 $titling: "Montserrat", "Gotham", "Metropolis", "Gontserrat", "Proxima Nova",
   sans-serif;
-$mono: "Jetbrains Mono", monospace;
+$mono: "Jetbrains Mono", "Noto Sans KR", monospace;
 
 * {
   box-sizing: border-box;
+}
+
+::selection {
+  background-color: $cyan;
+  color: white;
 }
 
 body {
@@ -29,6 +35,13 @@ body {
 
 code {
   font-family: $mono;
+  color: #e46786;
+
+}
+
+code.language-plaintext::before,
+code.language-plaintext::after {
+  content: "`";
 }
 
 ul {
@@ -42,8 +55,17 @@ a {
   text-decoration: underline;
 }
 
-h1,h2,h3,h4,h5,h6 {color: $softblack;}
-p{color: $keyblack;}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $softblack;
+}
+p {
+  color: $keyblack;
+}
 
 header .inside,
 footer .inside {
@@ -145,7 +167,7 @@ main.post {
   hr {
     max-width: $breakpoint1 - 2 * $gap;
     margin: 0 auto;
-    border-color: rgba(0, 0, 0, 0.4); 
+    border-color: rgba(0, 0, 0, 0.4);
     border-width: 1px 0 0 0;
   }
 }
@@ -166,27 +188,31 @@ article {
       line-height: 1.5;
       border-radius: $gap;
       overflow: auto;
+      code {
+        color: white;
+      }
     }
   }
 
   h2 {
-    margin: 44px 0 36px;
+    margin: 96px 0 36px;
   }
 
   h3 {
-    margin: 40px 0 32px;
+    margin: 56px 0 32px;
   }
 
   h4 {
-    margin: 36px 0 28px;
+    margin: 52px 0 28px;
   }
 
   p {
     margin: 0 0 20px;
   }
 
-  a {
-    color: $cyan;
+  a,
+  a > code {
+    color: $keycyan;
   }
 
   ul {
@@ -220,14 +246,14 @@ h1 {
 }
 
 h2 {
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   letter-spacing: -0.5px;
   margin: 0 0 8px;
 }
 
 h3 {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 300;
   margin: 18px 0;
 }
@@ -277,10 +303,13 @@ p {
 }
 
 blockquote {
-  margin: 48px 0;
+  background-color: rgb(233, 233, 233);
+  margin: 24px 0;
+  padding: 20px;
+  border-radius: 20px;
   p {
-    color: $cyan;
-    font: 400 36px "JetBrains Mono";
+    margin: 0;
+    color: black;
   }
 }
 
