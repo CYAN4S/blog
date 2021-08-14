@@ -1,10 +1,10 @@
 ---
-title: "Next.js Learn 요약"
+title: "Next.js Learn 요약 및 정리"
 categories: [dev]
-tags: [nextjs, react, web]
+tags: [nodejs, nextjs, react, web]
 ---
 
-Vercel 사에서 제공하는 Next.js 튜토리얼인 [Learn Next.js](https://nextjs.org/learn)에서 중요하다 생각되는 내용을 요약해 보았습니다.
+Vercel 사에서 제공하는 Next.js 튜토리얼인 [Learn Next.js](https://nextjs.org/learn)에서 중요하다 생각되는 내용을 요약 및 정리를 하였습니다.
 
 튜토리얼을 통해 제작된 프로젝트는 [이 링크](https://github.com/CYAN4S/nextjs-blog)를 통해 볼 수 있으며, 해당 프로젝트는 TypeScript를 사용합니다. 이 요약본은 JavaScript를 기준으로 서술하였습니다.
 
