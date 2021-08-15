@@ -2,8 +2,8 @@
 layout: default
 ---
 
-{% capture svg %}url({{page.svg | relative_url}}){% endcapture %}
-{% capture img %}url({{page.image | relative_url}}){% endcapture %}
+{% capture svg %}linear-gradient(to top,rgba(0,0,0,0.6),rgba(0,0,0,0)),url({{page.svg | relative_url}}){% endcapture %}
+{% capture img %}linear-gradient(to top,rgba(0,0,0,0.6),rgba(0,0,0,0)),url({{page.image | relative_url}}){% endcapture %}
 {% if page.svg %} {% assign image = svg %} 
 {% elsif page.image %} {% assign image = img %} 
 {% else %} {% assign image = 'linear-gradient(0.25turn, #1AC676, #26BFB3, #46ABDB);' %} 

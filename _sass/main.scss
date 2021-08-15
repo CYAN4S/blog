@@ -215,12 +215,25 @@ article {
     color: $keycyan;
   }
 
-  ul {
-    margin: 20px;
+  ol, ul {
+    margin: 24px 20px;
   }
 
   li {
+    margin: 8px 0;
+  }
+
+  ol > li {
+    list-style-type: numeric;
+  }
+
+  ul > li {
     list-style-type: disc;
+  }
+
+  ul ul, ul ol, ol ul, ol ol {
+    margin: 8px 0 8px 32px;
+    padding: 0;
   }
 
   img {
@@ -266,7 +279,7 @@ h4 {
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
   margin: 0 0 8px;
 }
