@@ -1,0 +1,31 @@
+footer .inside {
+  padding: 0 $gap;
+  margin: 0 auto;
+  max-width: $breakpoint0;
+}
+
+footer {
+  background-color: gray;
+  > div.inside {
+    display: flex;
+    > div {
+      margin: 20px 0;
+      flex: 1;
+      font-family: $mono;
+    }
+    @media (max-width: $breakpoint1) {
+      flex-direction: column;
+    }
+  }
+
+  div {
+    color: white;
+  }
+
+  li {
+    color: lightgray;
+    a {
+      color: white;
+    }
+  }
+}

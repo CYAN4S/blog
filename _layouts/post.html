@@ -9,7 +9,7 @@ layout: default
 {% else %} {% assign image = 'linear-gradient(0.25turn, #1AC676, #26BFB3, #46ABDB);' %} 
 {% endif %}
 
-<main class="post">
+<main id="post">
   <div class="post-header" style="background-image: {{image}};">
     <div class="flexauto"></div>
     <div class="inside">
@@ -19,8 +19,7 @@ layout: default
         <a
           href="{{ 'categories' | relative_url }}#category-{{ page.categories[0]  }}"
           style="font-weight: 700"
-          >{{ page.categories[0] | upcase }}</a
-        >
+          >{{ page.categories[0] | upcase }}</a>
         · {% for tag in page.tags %}
         <a href="{{ 'tags' | relative_url }}#tag-{{ tag }}">#{{ tag }}</a>
         {% endfor %}
@@ -33,28 +32,21 @@ layout: default
   <hr />
 
   <div class="neighbor">
-    <div>
-      <p style="font-weight: 700; margin-right: 20px;">이전 글</p>
+      <p style="font-weight: 700;">이전 글</p>
+
       {% if page.previous %}
-      <p>
-        <a href="{{ page.previous.url | relative_url }}">
-          {{page.previous.title}}
-        </a>
-      </p>
+      <p><a href="{{ page.previous.url | relative_url }}">{{page.previous.title}}</a></p>
       {% else %}
       <p style="color: gray">이전 글이 없습니다.</p>
       {% endif %}
-    </div>
-    <div>
-      <p style="font-weight: 700; margin-right: 20px;">다음 글</p>
+
+      <p style="font-weight: 700;">다음 글</p>
+      
       {% if page.next %}
-      <p>
-        <a href="{{ page.next.url | relative_url }}">{{page.next.title}}</a>
-      </p>
+      <p><a href="{{ page.next.url | relative_url }}">{{page.next.title}}</a></p>
       {% else %}
       <p style="color: gray">다음 글이 없습니다.</p>
       {% endif %}
-    </div>
   </div>
   <script
     src="https://utteranc.es/client.js"

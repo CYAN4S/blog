@@ -1,0 +1,12 @@
+<a href="{{ page.link }}" class="postcard social {{page.name}}">
+  <div class="postcard-social-image-container">
+    <img
+      src="{{ 'assets/img/social/' | relative_url }}{{page.name}}.svg"
+      alt=""
+    />
+  </div>
+  <div class="postcard-social-description">
+    <h6>{{ page.name | upcase }}</h6>
+    <h4>{{ page.id }}</h4>
+  </div>
+</a>

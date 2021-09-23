@@ -2,11 +2,36 @@
 layout: default
 ---
 
-<main class="index">
-  <section>
+<main id="index">
+  <section
+    id="intro"
+    style="background-image: url({{'assets/img/default/title.jpg' | relative_url}}); background-position: center;"
+  >
+    <section class="force-section">
+      TECH BLOG<br />FOR US<br />BY CYAN4S
+    </section>
+  </section>
+
+  <section id="features">
+    <div class="cyanli">FEATURES</div>
+    <div class="postcards">
+      {% for post in site.posts limit:6 %} {% include postcard.html %} {% endfor
+      %}
+    </div>
+  </section>
+
+  <section id="recents">
     <div class="cyanli">RECENT POSTS</div>
     <ul class="post-ul">
       {% for post in site.posts %} {% include post-li.html %} {% endfor %}
     </ul>
+  </section>
+
+  <section id="social">
+    <div class="cyanli">LINKS</div>
+    <div class="postcards">
+      {% for page in site.data.social %} {% include postcard-social.html %} {%
+      endfor %}
+    </div>
   </section>
 </main>

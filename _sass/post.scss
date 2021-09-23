@@ -1,0 +1,154 @@
+main#post {
+  .post-header {
+    max-width: $breakpoint1;
+    min-height: 430px;
+    margin: 0 auto;
+    padding: 0 $gap $gap;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: $gap;
+    box-shadow: 0px 8px 12px -8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    > .inside {
+      * {
+        color: white;
+      }
+      h1 {
+        margin-bottom: 36px;
+      }
+      h6 {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  hr {
+    max-width: $breakpoint1 - 2 * $gap;
+    margin: 0 auto;
+    border-color: rgba(0, 0, 0, 0.4);
+    border-width: 1px 0 0 0;
+  }
+}
+
+.neighbor {
+  max-width: $breakpoint1;
+  margin: 0 auto;
+  padding: 40px $gap;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: $gap;
+}
+
+article {
+  max-width: $breakpoint1;
+  margin: 0 auto;
+  padding: 80px 0 40px;
+  > * {
+    padding: 0 $gap;
+  }
+
+  div[class*="language"] {
+    padding: 0;
+    margin: 20px 0;
+    pre {
+      padding: $gap;
+      line-height: 1.5;
+      border-radius: $gap;
+      overflow: auto;
+      code {
+        color: white;
+      }
+    }
+  }
+
+  a,
+  a > code {
+    color: $primary-dark;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  blockquote {
+    background-color: $lightgray;
+    margin: 24px 0;
+    padding: 20px;
+    border-radius: 20px;
+    p {
+      margin: 0;
+      color: $keyblack;
+    }
+  }
+
+  h1 {
+    letter-spacing: -1.5px;
+  }
+
+  h2 {
+    margin: 72px 0 30px;
+  }
+
+  h3 {
+    margin: 56px 0 24px;
+  }
+
+  h4 {
+    margin: 52px 0 20px;
+  }
+
+  h5 {
+    margin: 48px 0 16px;
+  }
+
+  h6 {
+    margin: 36px 0 16px;
+  }
+
+  p,
+  ol,
+  ul {
+    margin: 0 0 20px;
+  }
+
+  ol,
+  ul {
+    margin: 24px 20px;
+  }
+
+  li {
+    margin: 8px 0;
+  }
+
+  ol > li {
+    list-style-type: numeric;
+  }
+
+  ul > li {
+    list-style-type: disc;
+  }
+
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin: 8px 0 8px 32px;
+    padding: 0;
+  }
+}
+
+.dark article {
+  blockquote {
+    background-color: $darkgray;
+    margin: 24px 0;
+    padding: 20px;
+    border-radius: 20px;
+    p {
+      margin: 0;
+      color: $keywhite;
+    }
+  }
+}

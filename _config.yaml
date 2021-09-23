@@ -33,6 +33,7 @@ defaults:
       path: ""
     values:
       layout: "default"
+      image: "/assets/img/default/default.png"
 
 plugins:
   - jekyll-sitemap

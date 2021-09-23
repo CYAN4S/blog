@@ -1,15 +1,23 @@
-- name: CYAN4S Homepage
-  id: Link
-  link: https://cyan4s.github.io
-
 - name: GitHub
   id: CYAN4S
   link: https://github.com/CYAN4S
 
 - name: Twitter
-  id: cyan4s
+  id: CYAN4S(@cyan4s)
   link: https://twitter.com/cyan4s
 
-- name: Blog Source Code
-  id: Browse
-  link: https://github.com/CYAN4S/blog
+- name: Facebook
+  id: 손인호
+  link: https://www.facebook.com/CYAN4S
+
+- name: Instagram
+  id: 손인호(@cyan4s)
+  link: https://www.instagram.com/cyan4s/
+
+- name: Behance
+  id: Inho Son
+  link: https://www.behance.net/CYAN4S
+
+- name: Pinterest
+  id: 인호 손(@CYAN4S)
+  link: https://www.pinterest.co.kr/CYAN4S/
