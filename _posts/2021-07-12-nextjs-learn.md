@@ -2,6 +2,7 @@
 title: "Next.js Learn 요약 및 정리"
 categories: [dev]
 tags: [nodejs, nextjs, react, web]
+image: "assets/posts/nextjs-learn.jpg"
 ---
 
 Vercel 사에서 제공하는 Next.js 튜토리얼인 [Learn Next.js](https://nextjs.org/learn)에서 중요하다 생각되는 내용을 요약 및 정리를 하였습니다.
