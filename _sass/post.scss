@@ -76,7 +76,7 @@ article {
   blockquote {
     background-color: $lightgray;
     margin: 24px 0;
-    padding: 20px;
+    padding: 24px;
     border-radius: 20px;
     p {
       margin: 0;
@@ -89,29 +89,29 @@ article {
   }
 
   h2 {
-    margin: 72px 0 30px;
+    margin: 120px 0 16px;
   }
 
   h3 {
-    margin: 56px 0 24px;
+    margin: 80px 0 16px;
   }
 
   h4 {
-    margin: 52px 0 20px;
+    margin: 70px 0 10px;
   }
 
   h5 {
-    margin: 48px 0 16px;
+    margin: 60px 0 10px;
   }
 
   h6 {
-    margin: 36px 0 16px;
+    margin: 50px 0 10px;
   }
 
   p,
   ol,
   ul {
-    margin: 0 0 20px;
+    margin: 0 0 10px;
   }
 
   ol,
@@ -121,6 +121,10 @@ article {
 
   li {
     margin: 8px 0;
+  }
+
+  li::marker {
+    font-weight: 700;
   }
 
   ol > li {
@@ -150,5 +154,10 @@ article {
       margin: 0;
       color: $keywhite;
     }
+  }
+
+  a,
+  a > code {
+    color: $primary;
   }
 }

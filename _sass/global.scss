@@ -1,12 +1,12 @@
 //  IDENTITY COLOR
 
 $primary: #26bfb3;
-$primary-dark: #008e84;
-$primary-light: #6af2e5;
+$primary-dark: #1C8C83;
+$primary-light: #65CAC1;
 
-$secondary: #ff7396;
-$secondary-dark: #c84168;
-$secondary-light: #ffa5c6;
+$secondary: #ff9baa;
+$secondary-dark: #FF4F69;
+$secondary-light: #FFCCD4;
 
 //  BACKGROUND COLOR
 
@@ -60,7 +60,13 @@ body.dark {
 
 code {
   font-family: $mono;
-  color: $secondary;
+  color: $secondary-dark;
+}
+
+.dark {
+  code {
+    color: $secondary;
+  }
 }
 
 code.language-plaintext::before,

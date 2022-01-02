@@ -1,7 +1,13 @@
 title: CYAN4S BLOG
 email: me@cyan4s.com
+description: >-
+  CYAN4S의 기술 블로그입니다.
 
+baseurl: ""
 url: https://blog.cyan4s.com
+
+twitter_username: cyan4s
+github_username: CYAN4S
 
 author:
   twitter: cyan4s
@@ -33,8 +39,21 @@ defaults:
       path: ""
     values:
       layout: "default"
-      image: "/assets/img/default/default.png"
+      image: "/assets/img/default/thumbnail.png"
 
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
