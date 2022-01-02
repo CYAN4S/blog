@@ -3,19 +3,31 @@ title: "Next.js Learn 요약 및 정리"
 categories: [dev]
 tags: [nodejs, nextjs, react, web]
 image: "assets/posts/nextjs-learn.jpg"
+update: 2021-01-02
 ---
 
-Vercel 사에서 제공하는 Next.js 튜토리얼인 [Learn Next.js](https://nextjs.org/learn)에서 중요하다 생각되는 내용을 요약 및 정리를 하였습니다.
+Vercel의 Next.js 튜토리얼인 [Learn Next.js](https://nextjs.org/learn)에서 중요한 내용을 요약 및 정리하였습니다.
 
 튜토리얼을 통해 제작된 프로젝트는 [이 링크](https://github.com/CYAN4S/nextjs-blog)를 통해 볼 수 있으며, 해당 프로젝트는 TypeScript를 사용합니다. 이 요약본은 JavaScript를 기준으로 서술하였습니다.
 
-> 이 포스트는 Next.js를 이미 알고 있는 사람들이, 자신의 지식을 재확인할 수 있는 용도로 작성되었습니다. [Learn Next.js](https://nextjs.org/learn)에서 보다 친절한 강의가 있으니, 이 포스트로 Next.js를 입문하시는 것은 권장드리지 않습니다.
+> 이 포스트는 [Learn Next.js](https://nextjs.org/learn) 내용 전체에 대한 요약으로, 이전에 Next.js를 배웠던 사람이 지식을 빠르게 재확인할 수 있는 것을 목표로 작성하였습니다. 입문자에게는 보다 친절한 강의인 [Learn Next.js](https://nextjs.org/learn)을 추천합니다.
 
-## Create a Next.js App
+## Next.js 앱 만들기
+
+### 유용한 핵심 기능
+
+- [페이지](https://nextjs.org/docs/basic-features/pages) 기반의 라우팅 시스템([동적 라우팅](https://nextjs.org/docs/routing/dynamic-routes) 지원)
+- 페이지 단위로 [SSG](https://nextjs.org/docs/basic-features/pages#static-generation-recommended)나 [SSR](https://nextjs.org/docs/basic-features/pages#server-side-rendering)로 Pre-rendering 지원
+- 빠른 페이지 로딩을 위해 자동적으로 코드 분할
+- 최적화된 prefetching이 적용된 [클라이언트 측 라우팅](https://nextjs.org/docs/routing/introduction#linking-between-pages)
+- [Built-in CSS](https://nextjs.org/docs/basic-features/built-in-css-support), [Sass](https://nextjs.org/docs/basic-features/built-in-css-support#sass-support) 지원 및 모든 [CSS-in-JS](https://nextjs.org/docs/basic-features/built-in-css-support#css-in-js) 라이브러리 지원
+- 개발 환경에서 [Fast Refresh](https://nextjs.org/docs/basic-features/fast-refresh) 지원
+- 서버리스 함수를 통한 [API routes](https://nextjs.org/docs/api-routes/introduction)로 API 엔드포인트 제작
+- 넓은 확장성
 
 ### 앱 생성
 
-[Create Next App](https://nextjs.org/docs/api-reference/create-next-app)을 이용해 Next.js 앱을 자동으로 만들 수 있습니다.
+[Create Next App](https://nextjs.org/docs/api-reference/create-next-app)을 이용해 Next.js 앱을 만들 수 있습니다. 버전 **10.13** 이상의 **[Node.js](https://nodejs.org)**가 사전에 설치되어 있어야 합니다.
 
 ```shell
 npx create-next-app
@@ -25,26 +37,42 @@ npx create-next-app --typescript
 
 ### CLI에서 앱 구동
 
-[CLI](https://nextjs.org/docs/api-reference/cli) 환경에서 서버를 실행할 수 있습니다. 생성된 디렉토리에서 다음 커맨드를 실행하여 개발 서버를 구동합니다.
+[CLI](https://nextjs.org/docs/api-reference/cli) 환경에서 서버를 실행할 수 있습니다. 생성된 디렉토리에서 다음 커맨드를 실행하여 *개발 서버*를 구동합니다.
 
 ```shell
 npm run dev
 ```
 
-개발 서버는 [Fast Refresh](https://nextjs.org/docs/basic-features/fast-refresh)가 적용되어 있어, 파일 내용의 변경점을 브라우저에 즉시 반영합니다.
+개발 서버에서는 [Fast Refresh](https://nextjs.org/docs/basic-features/fast-refresh)가 적용됩니다. 만약 파일의 내용을 수정하였을 때, 변경된 내용을 브라우저에 즉시 반영합니다.
 
-## Navigate Between Pages
+## 페이지 간 이동
 
-Next.js에서의 페이지는 [`pages` 디렉토리](https://nextjs.org/docs/basic-features/pages)의 파일에서 내보낸 React 컴포넌트입니다.
+Next.js에서 페이지는 **[`pages` 디렉토리](https://nextjs.org/docs/basic-features/pages)에 있는 파일에서 export된 React 컴포넌트**로 정의됩니다.
 
-페이지는 해당 **파일 이름**에 따라 라우트(경로)와 연결됩니다. 예를 들어:
+페이지와 연결되는 [라우트](https://nextjs.org/docs/routing/introduction)(경로)는 해당 **파일 이름**에 의해 결정됩니다. 예를 들자면:
 
 - `pages/posts/first-post.js`의 라우트는 `/posts/first-post`입니다.
 - `pages/index.js`의 라우트는 `/`입니다.
 
+### 새 페이지 생성
+
+`pages` 내에 파일을 생성한 후, 해당 파일 내에서 페이지의 내용이 되는 React 컴포넌트를 export합니다. 해당 파일의 경로가 URL이 됩니다.
+
+컴포넌트의 이름은 자유롭게 지을 수 있으나, export 시 항상 **`default` export**를 사용해야 합니다.
+
+```jsx
+export default function FirstPost() {
+  return <h1>First Post</h1>
+}
+```
+
 ### Link 컴포넌트
 
-[라우팅](https://nextjs.org/docs/routing/introduction)은 페이지 링크에 사용되는 `<a>` HTML 태그를 **[Link 컴포넌트](https://nextjs.org/docs/api-reference/next/link)**로 감싸서 사용합니다.
+일반적으로 웹사이트에서 다른 페이지를 연결할 때, `<a>` HTML 태그를 사용합니다.
+
+만약 외부 링크가 아닌 같은 Next.js 어플리케이션 내의 다른 페이지를 연결할 때, `<a>` HTML 태그를 **[`Link` 컴포넌트](https://nextjs.org/docs/api-reference/next/link)**로 감싸서 사용합니다.
+
+`<Link>`를 통해, **client-side navigation**이 가능해집니다.
 
 ```jsx
 import Link from "next/link";
@@ -59,27 +87,33 @@ import Link from "next/link";
 
 ### Client-Side Navigation
 
-Link 컴포넌트는 같은 Next.js 앱에 있는 두 페이지 간에 **client-side navigation**을 활성화합니다.
+`Link` 컴포넌트를 통해, 같은 Next.js 앱에 있는 두 페이지 간에 **client-side navigation**이 가능합니다.
 
-Client-side navigation이란 페이지 전환이 *JavaScript*로 이루어지는 것으로, 이는 기존 브라우저의 탐색 기능보다 빠르게 작동합니다.
+Client-side navigation이란 페이지 전환이 *JavaScript*로 이루어지는 것으로, 이는 브라우저의 기본 naviagation보다 빠르게 작동합니다.
 
-#### Code splitting 및 Prefetch
+#### Code splitting 및 Prefetching
 
-Next.js는 code splitting을 자동으로 수행하여, 각 페이지는 필요에 의해서만 로드됩니다. 이를 통해 수백개의 페이지가 있어도 홈페이지가 빠르게 로드됩니다.
+Next.js는 코드를 자동으로 쪼개서, 각 페이지가 필요할 때만 로딩이 되게 합니다. 이 덕분에, 수백개의 페이지가 있어도 홈페이지가 빠르게 로딩이 됩니다.
 
-또한, 프로덕션 상태에서 Link 컴포넌트가 사용자의 화면에 표시될 때, Next.js는 백그라운드에서 자동으로 링크된 페이지에 해당하는 코드를 **prefetch**합니다. 그 결과로 링크를 클릭할 때 페이지 전환이 빠르게 이루어집니다.
+또한, 프로덕션 상태에선 `Link` 컴포넌트가 사용자의 화면에 표시될 때, Next.js는 백그라운드에서 링크된 페이지에 해당하는 코드를 자동으로 **prefetch**(미리 불러오기)를 수행합니다. 이로 인해, 링크를 클릭할 때 페이지가 바로 전환될 수 있습니다.
 
 ## Assets, Metadata, CSS
 
-Next.js는 CSS와 Sass 지원이 기본 탑재되어 있습니다.
-
 ### Assets
 
-Next.js는 이미지같은 정적 리소스를 [`public` 디렉토리](https://nextjs.org/docs/basic-features/static-file-serving)에 두어 활용할 수 있습니다.
+Next.js에서 이미지와 같은 **정적 에셋**를 제공할 때, [`public` 디렉토리](https://nextjs.org/docs/basic-features/static-file-serving) 안에 두어야합니다.
+
+또한, `public` 디렉토리는 `robots.txt`, Google 사이트 소유권 확인 등의 [다른 정적 파일 제공](https://nextjs.org/docs/basic-features/static-file-serving)에도 유용합니다.
 
 #### Image 컴포넌트 및 최적화
 
-[Image 컴포넌트](https://nextjs.org/docs/api-reference/next/image)는 일반 `<img>` HTML 태그의 확장형이며, 최적화를 자동으로 수행합니다.
+[`Image` 컴포넌트](https://nextjs.org/docs/api-reference/next/image)는 일반 `<img>` HTML 태그의 확장형이며, 모던 웹을 위한 최적화를 자동으로 수행합니다.
+
+`Image` 컴포넌트를 이용할 경우의 특징은 다음과 같습니다.
+
+- Next.js는 이미지를 빌드 시간이 아닌 사용자의 요청에 의해(on-demand) 최적화합니다.
+- 이미지가 기본적으로 스크롤되어 뷰포트 안으로 들어올 때 로딩됩니다(lazy load).
+- [누적 레이아웃 이동(Cumulative Layout Shift)](https://web.dev/cls/)이 안 일어나게끔 이미지를 렌더링합니다.
 
 ```jsx
 import Image from "next/image";
@@ -96,7 +130,7 @@ const YourComponent = () => (
 
 ### Metadata
 
-`<title>` 등의 `<head>` 태그에 해당하는 메타데이터는 [Head 컴포넌트](https://nextjs.org/docs/api-reference/next/head)를 활용하여 변경합니다.
+`<title>`과 같이, `<head>` 태그 안에 들어가는 페이지의 메타데이터는 [`Head` 컴포넌트](https://nextjs.org/docs/api-reference/next/head)를 통해 변경할 수 있습니다.
 
 ```jsx
 import Head from "next/head";
@@ -113,7 +147,29 @@ export default function FirstPost() {
 }
 ```
 
-> `./pages/document.js` 파일을 생성하여 [커스텀 `Document`](https://nextjs.org/docs/advanced-features/custom-document)로 `<html>` 에 해당되는 어트리뷰트(`lang` 등)를 수정할 수 있습니다.
+> 만약 `<html>` 에 해당되는 어트리뷰트(`lang` 등)를 수정하고 싶다면, `./pages/document.js` 파일을 생성하여 [커스텀 `Document`](https://nextjs.org/docs/advanced-features/custom-document)를 사용할 수 있습니다.
+
+### Third-Party JavaScript
+
+`<script>` HTML 태그의 확장형인, [`Script`](https://nextjs.org/docs/api-reference/next/script) 컴포넌트를 이용해 제3자 스크립트를 불러올 수 있습니다.
+
+```jsx
+import Script from 'next/script'
+
+export default function FirstPost() {
+  return (
+    <>
+      <Script
+        src="https://connect.facebook.net/en_US/sdk.js"
+        strategy="lazyOnload"
+        onLoad={() =>
+          console.log(`script loaded correctly, window.FB has been populated`)
+        }
+      />
+    </>
+  )
+}
+```
 
 ### CSS
 
@@ -121,7 +177,7 @@ Next.js는 기본적으로 여러 형태의 [CSS 지원](https://nextjs.org/docs
 
 ### Layout 컴포넌트
 
-Layout 컴포넌트를 만들어 모든 페이지에서 활용할 수 있게 만들 수 있습니다. 예로, `components/layout.js` 파일을 만들어 CSS Modules을 적용한 예시입니다.
+모든 페이지에서 활용할 수 있게 Layout 컴포넌트를 만들어 봅시다. 예로, `components/layout.js` 파일을 만들어 [CSS Modules](https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css)을 적용한 예시입니다.
 
 ```jsx
 import styles from "./layout.module.css";
@@ -131,9 +187,35 @@ export default function Layout({ children }) {
 }
 ```
 
+CSS 모듈에 사용할 CSS 파일의 이름은 항상 **`.module.css`**로 끝나야합니다. 예로, `components/layout.module.css`의 내용입니다.
+
+```css
+.container {
+  max-width: 36rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+}
+```
+
+만든 Layout은 다음과 같이 사용합니다.
+
+```jsx
+import Layout from '../../components/layout'
+
+export default function FirstPost() {
+  return (
+    <Layout>
+      Lorem Ipsum
+    </Layout>
+  )
+}
+```
+
 ### 전역 스타일
 
-**`pages/_app.js`의 [`App` 컴포넌트](https://nextjs.org/docs/advanced-features/custom-app)**는 모든 페이지를 아우르는 top-level 컴포넌트입니다. 이를 통해 전역 CSS를 적용하는 등, 다른 페이지를 탐색할 때도 상태를 유지하는 데 사용할 수 있습니다.
+**`pages/_app.js`의 [`App` 컴포넌트](https://nextjs.org/docs/advanced-features/custom-app)**는 모든 페이지를 아우르는 top-level 컴포넌트입니다. 이를 통해, 페이지를 이동할 때에도 상태를 유지하는 데 사용할 수 있습니다.
+
+이를 이용하여 모든 페이지에 적용할 전역적인 CSS를 만들고 싶을 때 사용할 수 있습니다. CSS 파일인 `styles/global.css`를 만들어 사용하는 예제입니다.
 
 ```jsx
 import "../styles/global.css";
@@ -143,21 +225,23 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
+`pages/_app.js` 최초 생성 시 개발 서버가 구동 중이라면, 재시작이 필요합니다. 서버를 닫은 뒤, `npm run dev`로 서버를 재시작합니다.
+
 ## Pre-rendering, Data Fetching
 
 ### Pre-rendering
 
 Next.js는 기본적으로 모든 페이지를 **pre-render**합니다. 즉, _모든 페이지에 대한 HTML을 사전에 생성합니다._ Pre-rendering은 성능과 SEO에 유리합니다.
 
-생성된 각 HTML 문서는 작은 JavaScript 코드를 포함하며, 페이지가 로드될 때 JavaScript 코드가 수행되어 페이지를 완전히 인터렉티브하게 만들어주는 **hydration** 과정이 수행됩니다.
+생성된 각 HTML 문서에는, 문서에 필요한 최소한의 JavaScript 코드가 같이 나옵니다. 페이지가 로딩될 때 해당 JavaScript 코드가 실행되면서 페이지를 완전히 인터렉티브하게 만들어주며, 이 과정을 **hydration**이라 부릅니다.
 
 #### Plain React 앱과의 차이
 
-Plain한 React 앱은 pre-render 과정이 없기에 모든 웹 요소가 hydration을 통해 초기화되며, JavaScript를 비활성화하면 아무 것도 표시되지 않습니다. 이와 달리 Next.js는 Pre-rendered HTML이 표시된 후, JavaScript가 React 컴포넌트를 초기화하는 방식으로 이루어집니다.
+Plain한 React 앱은 pre-render 과정이 없습니다. 즉, 모든 웹 요소가 hydration을 통해 초기화되며, JavaScript를 비활성화하면 아무 것도 표시되지 않습니다. 이와 달리 Next.js는 Pre-rendered된 HTML이 표시된 후, JavaScript가 React 컴포넌트를 초기화하는 방식으로 이루어집니다.
 
 ### 두 가지의 Pre-rendering
 
-Next.js의 pre-rendering에는 페이지에 대한 HTML을 **어느 시점에** 생성하는 지에 따라 두 가지로 나누어집니다.
+Next.js의 pre-rendering에는 두 가지가 있으며, 이는 페이지에 대한 HTML을 **어느 시점에** 생성하는 지에 따라 나눠집니다.
 
 - [**Static Generation(정적 생성)**](https://nextjs.org/docs/basic-features/pages#static-generation-recommended): **빌드될 때** HTML이 생성됩니다.
 - [**Server-side Rendering(SSR)**](https://nextjs.org/docs/basic-features/pages#server-side-rendering): **각 요청마다** HTML이 생성됩니다.
@@ -168,17 +252,17 @@ Next.js의 pre-rendering에는 페이지에 대한 HTML을 **어느 시점에** 
 
 요청마다 페이지를 렌더링하는 것보다 한 번 생성된 페이지를 CDN에서 제공하는 것이 더욱 빠르기에, 가급적 **Static Generation**을 사용하는 것이 좋습니다.
 
-자기 자신에게 "사용자의 요청에 **앞서서** 페이지를 pre-render할 수 있나?" 라는 질문을 던지는 것이 방법 결정에 도움이 됩니다. 만약 대답이 "할 수 있다." 이면 **정적 생성**을 선택하는 것이 좋습니다.
+만약 어느 방법을 선택해야 할지 모르겠다면, 자기 자신에게 "사용자가 요청하기 **앞서서**, 페이지를 pre-render할 수 있나?" 라고 질문하는 것이 도움이 됩니다. 만약 대답이 "할 수 있다." 이면 **Static Generation**을 선택하는 것이 좋습니다.
 
-만약 페이지에 자주 갱신되는 데이터를 표시해야 하고, 페이지 내용이 요청마다 매번 변경된다면 정적 생성은 좋은 선택이 아닙니다. **Server-side Rendering**은 다소 느리지만, 항상 최신 정보를 페이지에 표시할 수 있습니다. 혹은, pre-render 없이 Client-side JavaScript를 통해 표시할 수도 있습니다.
+만약 페이지에 자주 갱신되는 데이터를 표시해야 하고, 페이지 내용이 요청마다 매번 변경된다면, Static Generation은 좋은 선택이 아닙니다. **Server-side Rendering**은 다소 느리지만, 항상 최신 정보를 페이지에 표시할 수 있습니다. 혹은, pre-render 없이 Client-side JavaScript를 통해 표시할 수도 있습니다.
 
 ### Static Generation, Data Fetching
 
-정적 생성은 데이터 유무와 관계없이 이루어질 수 있습니다.
+Static Generation은 데이터 유무와 관계없이 이루어질 수 있습니다.
 
-외부 데이터 페칭이 필요하지 않은 페이지는 프로덕션 빌드 때 자동으로 정적 생성이 이루어집니다.
+외부 데이터 페칭(fetch)이 필요하지 않은 페이지는, 프로덕션 빌드 시 자동으로 Static Generation이 이루어집니다.
 
-혹은, HTML을 렌더링하기 전에 먼저 외부 데이터 페칭(파일 시스템 접근, 외부 API 호출, DB 쿼리 등)이 필요한 경우인 [**데이터를 포함한** 정적 생성](https://nextjs.org/docs/basic-features/pages#static-generation-with-data) 또한 기본적으로 지원합니다.
+혹은, HTML을 렌더링하기 전에 먼저 외부 데이터 페칭(파일 시스템 접근, 외부 API 호출, DB 쿼리 등)이 필요한 경우인 [**데이터를 포함한** Static Generation](https://nextjs.org/docs/basic-features/pages#static-generation-with-data) 또한 기본적으로 지원합니다.
 
 Next.js에서는 데이터 페칭을 포함한 페이지 생성을 위해 **[`getStaticProps`](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation)** 라는 async 함수를 사용할 수 있습니다. 페이지 컴포넌트를 export할 때 같이 export할 수 있으며, 기본적인 내용은 다음과 같습니다.
 
