@@ -2,18 +2,14 @@
 layout: default
 ---
 
-{% capture svg %}linear-gradient(to top,rgba(0,0,0,0.6),rgba(0,0,0,0)),url({{page.svg | relative_url}}){% endcapture %}
-{% capture img %}linear-gradient(to top,rgba(0,0,0,0.6),rgba(0,0,0,0)),url({{page.image | relative_url}}){% endcapture %}
-{% if page.svg %} {% assign image = svg %} 
-{% elsif page.image %} {% assign image = img %} 
-{% else %} {% assign image = 'linear-gradient(0.25turn, #1AC676, #26BFB3, #46ABDB);' %} 
-{% endif %}
-
 <main id="post">
-  <div class="post-header" style="background-image: {{image}};">
+  <div class="post-header" style="background-image: url({{page.image | relative_url}});">
     <div class="flexauto"></div>
     <div class="inside">
       <h6>{{ page.date | date: "%Y/%m/%d" }}</h6>
+      {% if page.update %}
+      <h6>{{ page.update | date: "%Y/%m/%d" }} 수정됨</h6>
+      {% endif %}
       <h1>{{ page.title }}</h1>
       <h6>
         <a
