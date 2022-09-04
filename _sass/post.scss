@@ -66,7 +66,7 @@ article {
 
   a,
   a > code {
-    color: $primary-dark;
+    color: $color-primary-dark;
   }
 
   img {
@@ -74,13 +74,13 @@ article {
   }
 
   blockquote {
-    background-color: $lightgray;
+    background-color: $color-background-gray;
     margin: 24px 0;
     padding: 24px;
     border-radius: 20px;
     p {
       margin: 0;
-      color: $keyblack;
+      color: $color-text-hard;
     }
   }
 
@@ -146,18 +146,18 @@ article {
 
 .dark article {
   blockquote {
-    background-color: $darkgray;
+    background-color: $color-dark-background-gray;
     margin: 24px 0;
     padding: 20px;
     border-radius: 20px;
     p {
       margin: 0;
-      color: $keywhite;
+      color: $color-dark-text;
     }
   }
 
   a,
   a > code {
-    color: $primary;
+    color: $color-background-gray;
   }
 }

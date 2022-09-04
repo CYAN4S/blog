@@ -20,8 +20,8 @@ header {
   }
 
   a, a > span {
-    color: $primary;
-    font: 700 24px Montserrat;
+    color: $color-primary;
+    font: 700 24px $font-display;
     text-decoration: none;
     letter-spacing: 0.03em;
   }
