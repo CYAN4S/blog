@@ -7,8 +7,8 @@ layout: default
     <div class="flexauto"></div>
     <div class="inside">
       <h6>{{ page.date | date: "%Y/%m/%d" }}</h6>
-      {% if page.update %}
-      <h6>{{ page.update | date: "%Y/%m/%d" }} 수정됨</h6>
+      {% if page.seo.date_modified %}
+      <h6>{{ page.seo.date_modified | date: "%Y/%m/%d" }}에 수정됨</h6>
       {% endif %}
       <h1>{{ page.title }}</h1>
       <h6>

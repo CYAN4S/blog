@@ -2,8 +2,9 @@
 title: "Next.js Learn 요약 및 정리"
 categories: [dev]
 tags: [nodejs, nextjs, react, web]
-image: "assets/posts/nextjs-learn.jpg"
-update: 2022-01-03
+image: "assets/posts/nextjs-learn.png"
+seo:
+  date_modified: 2022-01-03
 ---
 
 Vercel의 Next.js 튜토리얼인 [Learn Next.js](https://nextjs.org/learn)에서 중요한 내용을 요약 및 정리하였습니다.
@@ -497,7 +498,7 @@ export default function handler(req, res) {
 
 ### API Routes 세부 사항
 
-`getStaticProps`나 `getStaticPaths`에서 **API Route를 페치해서는 안 됩니다.**. 대신, 서버 사이드 코드를 `getStaticProps`나 `getStaticPaths`에 직접 넣어야 합니다. (혹은 도우미 함수를 이용할 수 있습니다.)
+`getStaticProps`나 `getStaticPaths`에서 **API Route를 페치해서는 안 됩니다.** 대신, 서버 사이드 코드를 `getStaticProps`나 `getStaticPaths`에 직접 넣어야 합니다. (혹은 도우미 함수를 이용할 수 있습니다.)
 
 API Routes를 잘 사용한 사례로, 폼 입력을 관리하는 경우입니다.
 
