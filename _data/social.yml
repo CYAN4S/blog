@@ -6,10 +6,6 @@
   id: CYAN4S(@cyan4s)
   link: https://twitter.com/cyan4s
 
-- name: Facebook
-  id: 손인호
-  link: https://www.facebook.com/CYAN4S
-
 - name: Instagram
   id: 손인호(@cyan4s)
   link: https://www.instagram.com/cyan4s/
@@ -21,3 +17,7 @@
 - name: Pinterest
   id: 인호 손(@CYAN4S)
   link: https://www.pinterest.co.kr/CYAN4S/
+
+- name: SoundCloud
+  id: CYAN4S
+  link: https://soundcloud.com/cyan4s

@@ -1,3 +1,7 @@
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
 title: CYAN4S BLOG
 email: me@cyan4s.com
 description: >-
@@ -41,19 +45,7 @@ defaults:
       layout: "default"
       image: "/assets/img/default/thumbnail.png"
 
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
 
-lsi: false
-safe: true
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
 
 sass:
   style: compressed
