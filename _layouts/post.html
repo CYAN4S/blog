@@ -3,7 +3,8 @@ layout: default
 ---
 
 <main id="post">
-  <div class="post-header" style="background-image: url({{page.image | relative_url}});">
+  <div class="post-header" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,160)), url({{ page.image | relative_url }});">
+
     <div class="flexauto"></div>
     <div class="inside">
       <h6>{{ page.date | date: "%Y/%m/%d" }}</h6>

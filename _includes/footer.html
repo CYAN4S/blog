@@ -1,20 +1,33 @@
 <footer>
   <div class="inside">
     <div>
-      <img src="{{ 'assets/img/logo-white.svg' | relative_url }}" alt="Logo at footer" width="28px" height="28px">
-      <div style="margin-top: 12px; font: 700 24px Outfit;">CYAN4S</div>
-      <div>Copyright {{ site.time | date: "%Y" }}.<br>CYAN4S All Rights Reserved.</div>
+      <svg style="fill: white; width: 28px; height: 28px">
+        <use
+          xlink:href="{{ '/assets/icon.svg#cyan4s' | relative_url }}"
+        ></use>
+      </svg>
+      <div style="margin-top: 12px; font: 700 24px Outfit">CYAN4S</div>
+      <div>
+        Copyright {{ site.time | date: "%Y" }}.<br />CYAN4S All Rights
+        Reserved.<br />{{ site.email }}
+      </div>
     </div>
     <div>
-      <div style="font-size: 24px; padding-bottom: 12px;">Related Site</div>
-      <ul>
-        <li><a href="https://www.cyan4s.com">CYAN4S Official Site</a></li>
-        <li><a href="https://github.com/CYAN4S/blog">Blog Source Code</a></li>
-        <li><a href="https://boun.cyan4s.com">Just For Fun!</a></li>
-        <!-- <li><svg style="fill: white; width: 20px; height: 20px;"><use xlink:href="{{ '/assets/social.svg#twitter' | relative_url }}"></use></svg></li>
-        <li><svg style="fill: white; width: 20px; height: 20px;"><use xlink:href="{{ '/assets/social.svg#github' | relative_url }}"></use></svg></li> -->
-        <li>{{ site.email }}</li>
-      </ul>
+      <div style="font-size: 24px; padding-bottom: 12px">Related Site</div>
+      <div>
+        <a href="https://www.cyan4s.com"><svg style="fill: white; width: 20px; height: 20px"><use xlink:href="{{ '/assets/icon.svg#cyan4s' | relative_url }}"/></svg></a>
+        <a href="https://github.com/CYAN4S"><svg style="fill: white; width: 20px; height: 20px"><use xlink:href="{{ '/assets/icon.svg#github' | relative_url }}"/></svg></a>
+        <a href="https://twitter.com/cyan4s"><svg style="fill: white; width: 20px; height: 20px"><use xlink:href="{{ '/assets/icon.svg#twitter' | relative_url }}"/></svg></a>
+        <a href="https://www.behance.net/CYAN4S"><svg style="fill: white; width: 20px; height: 20px"><use xlink:href="{{ '/assets/icon.svg#behance' | relative_url }}"/></svg></a>
+        <a href="https://soundcloud.com/cyan4s"><svg style="fill: white; width: 20px; height: 20px"><use xlink:href="{{ '/assets/icon.svg#soundcloud' | relative_url }}"/></svg></a>
+        <a href="https://www.instagram.com/cyan4s/"><svg style="fill: white; width: 20px; height: 20px"><use xlink:href="{{ '/assets/icon.svg#instagram' | relative_url }}"/></svg></a>
+      </div>
+      <div>
+        <ul>
+          <li><a href="https://github.com/CYAN4S/blog">Blog Source Code</a></li>
+          <li><a href="https://boun.cyan4s.com">Just For Fun!</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </footer>

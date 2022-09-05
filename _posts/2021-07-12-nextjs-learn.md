@@ -232,7 +232,7 @@ export default function App({ Component, pageProps }) {
 
 ### Pre-rendering
 
-Next.js는 기본적으로 모든 페이지를 **pre-render**합니다. 즉, _모든 페이지에 대한 HTML을 사전에 생성합니다._ Pre-rendering은 성능과 SEO에 유리합니다.
+Next.js는 기본적으로 모든 페이지를 **pre-render**합니다. 즉, *모든 페이지에 대한 HTML을 사전에 생성합니다.* Pre-rendering은 성능과 SEO에 유리합니다.
 
 생성된 각 HTML 문서에는, 문서에 필요한 최소한의 JavaScript 코드가 같이 나옵니다. 페이지가 로딩될 때 해당 JavaScript 코드가 실행되면서 페이지를 완전히 인터렉티브하게 만들어주며, 이 과정을 **hydration**이라 부릅니다.
 
@@ -310,7 +310,7 @@ export default function Home({ allPostsData }) {
 
 `getStaticProps`는 **server-side에서만 작동**합니다. Client-side에선 절대로 작동하지 않으며, JS 파일이 번들로 들어가지도 않습니다. 즉, 브라우저에 무언가를 보낼 필요없이, 데이터베이스에 직접적으로 쿼리를 보내는 코드를 넣을 수도 있습니다.
 
-**개발 모드**에서는 `getStaticProps`는 *매 요청*마다 실행됩니다. **프로덕션 모드**에서는 기본적으로 _빌드 시_ 수행되지만, [`getStaticPaths`](https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation)가 반환하는 [`fallback` key](https://nextjs.org/docs/basic-features/data-fetching#the-fallback-key-required) 를 이용해 변경할 수 있습니다.
+**개발 모드**에서는 `getStaticProps`는 *매 요청*마다 실행됩니다. **프로덕션 모드**에서는 기본적으로 *빌드 시* 수행되지만, [`getStaticPaths`](https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation)가 반환하는 [`fallback` key](https://nextjs.org/docs/basic-features/data-fetching#the-fallback-key-required) 를 이용해 변경할 수 있습니다.
 
 `getStaticProps`는 **페이지로부터만** export될 수 있습니다. 페이지가 아닌 파일에서는 불가능합니다. 이유는, React는 페이지가 렌더링되기 전에 필요한 모든 데이터를 필요로 하기 때문입니다.
 
@@ -336,7 +336,7 @@ export async function getServerSideProps(context) {
 
 만약 데이터를 **굳이** 미리 불러올 필요가 없다면, [Client-side Rendering](https://nextjs.org/docs/basic-features/data-fetching#fetching-data-on-the-client-side)를 사용할 수 있습니다.
 
-- 페이지에서 외부 데이터를 필요로 하지 않는 부분은 정적으로 생성한 후(pre-render), 
+- 페이지에서 외부 데이터를 필요로 하지 않는 부분은 정적으로 생성한 후(pre-render),
 - 페이지가 로드될 때, 클라이언트 측 JavaScript를 통해 외부 데이터를 페치하여 남은 부분을 채웁니다.
 
 CSR은 사용자 대시보드와 같이 개인적이고, 사용자 특정적이고, SEO와는 상관없고, pre-render될 필요없는 페이지에 적합합니다.
@@ -396,7 +396,7 @@ return {
 };
 ```
 
-- `paths`: 가능한 주소값을 모두 담는 일종의 배열로, _그냥 배열 형태가 아닌_ **반드시** 위와 같은 형태를 띄어야합니다.
+- `paths`: 가능한 주소값을 모두 담는 일종의 배열로, *그냥 배열 형태가 아닌* **반드시** 위와 같은 형태를 띄어야합니다.
   - 각 객체는 `params` 키와, 값으로 또 다른 객체를 포함합니다.
   - 또 다른 객체는 키 이름이 주소(여기서는 파일 이름이 `[id].js`이므로 `id`)이며, 값으로 가능한 주소값이 들어갑니다.
 - `fallback`: `paths`에 해당되지 않는 주소가 들어올 때 처리 방법을 지정합니다. 뒤에서 자세히 설명하겠습니다.
