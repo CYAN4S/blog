@@ -7,12 +7,13 @@ import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, prev, next } =
+  Astro.props;
 ---
 
 <html lang="ko">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} image={heroImage} />
     <style>
       .title {
         font-size: 2em;
@@ -25,6 +26,16 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       .last-updated-on {
         font-style: italic;
       }
+      .neighbor {
+        margin: 48px 0;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        row-gap: 12px;
+        column-gap: 20px;
+      }
+      .neighbor span {
+        color: gray;
+      }
     </style>
   </head>
 
@@ -32,7 +43,16 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <Header />
     <main>
       <article>
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+        {
+          heroImage && (
+            <img
+              width={720}
+              height={360}
+              src={heroImage}
+              alt={`게시글 '${title}'의 헤더 이미지`}
+            />
+          )
+        }
         <h1>{title}</h1>
         <FormattedDate date={pubDate} />
         {
@@ -45,6 +65,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         <hr />
         <slot />
       </article>
+      <div class="neighbor">
+        <b>이전 게시글</b>
+        {
+          prev.slug ? (
+            <a href={`/${prev.slug}`}>{prev.title}</a>
+          ) : (
+            <span>첫 게시글입니다.</span>
+          )
+        }
+        <b>다음 게시글</b>
+        {next.slug ? <a href={`/${next.slug}`}>{next.title}</a> : <span>마지막 게시글입니다.</span>}
+      </div>
     </main>
     <Footer />
   </body>
